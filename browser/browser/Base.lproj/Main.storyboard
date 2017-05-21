@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gSO-L0-GOK">
+                                <rect key="frame" x="10" y="30" width="355" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go"/>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yob-FD-NQk">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="←" id="0B2-7H-C2o">
+                                        <connections>
+                                            <action selector="goBackbutton:" destination="BYZ-38-t0r" id="9ui-DK-Dh2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="→" id="7Vg-L1-RKI">
+                                        <connections>
+                                            <action selector="goForward:" destination="BYZ-38-t0r" id="iye-8s-HFW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="gB9-BJ-H6h"/>
+                                    <barButtonItem title="Item" systemItem="refresh" id="EW8-M7-0wh">
+                                        <connections>
+                                            <action selector="goReload:" destination="BYZ-38-t0r" id="oGq-QW-va4"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6OO-7y-qaO">
+                                <rect key="frame" x="16" y="70" width="343" height="553"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qoU-68-XzO">
+                                <rect key="frame" x="335" y="35" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="6OO-7y-qaO" secondAttribute="trailing" id="5cV-Pa-Y5x"/>
+                            <constraint firstItem="6OO-7y-qaO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5qJ-Xx-yss"/>
+                            <constraint firstItem="qoU-68-XzO" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="10" id="7Ar-jj-M9R"/>
+                            <constraint firstItem="Yob-FD-NQk" firstAttribute="top" secondItem="6OO-7y-qaO" secondAttribute="bottom" id="D43-JA-32S"/>
+                            <constraint firstAttribute="trailing" secondItem="qoU-68-XzO" secondAttribute="trailing" constant="20" id="RsF-8m-65D"/>
+                            <constraint firstAttribute="trailing" secondItem="gSO-L0-GOK" secondAttribute="trailing" constant="10" id="SL7-HU-WE8"/>
+                            <constraint firstItem="gSO-L0-GOK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="USY-gU-g7t"/>
+                            <constraint firstItem="6OO-7y-qaO" firstAttribute="top" secondItem="gSO-L0-GOK" secondAttribute="bottom" constant="10" id="UT9-RN-ya7"/>
+                            <constraint firstAttribute="trailing" secondItem="Yob-FD-NQk" secondAttribute="trailing" id="ecw-bu-Nsc"/>
+                            <constraint firstItem="gSO-L0-GOK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="gIV-Ig-DIA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Yob-FD-NQk" secondAttribute="bottom" id="qiO-HW-C8p"/>
+                            <constraint firstItem="Yob-FD-NQk" firstAttribute="top" secondItem="6OO-7y-qaO" secondAttribute="bottom" id="rgj-fm-HrZ"/>
+                            <constraint firstItem="qoU-68-XzO" firstAttribute="centerY" secondItem="gSO-L0-GOK" secondAttribute="centerY" id="s0e-dT-DBn"/>
+                            <constraint firstItem="Yob-FD-NQk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ueC-IO-abM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="0B2-7H-C2o" id="WYU-B0-Whw"/>
+                        <outlet property="browserActivity" destination="qoU-68-XzO" id="Cbh-vD-fcL"/>
+                        <outlet property="browserWebview" destination="6OO-7y-qaO" id="fNP-F1-aYQ"/>
+                        <outlet property="nextButton" destination="7Vg-L1-RKI" id="GjH-F4-lJy"/>
+                        <outlet property="reloadButton" destination="EW8-M7-0wh" id="Ue0-b2-03b"/>
+                        <outlet property="urlTextfield" destination="gSO-L0-GOK" id="feL-Wx-9uT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-137" y="-28"/>
+        </scene>
+    </scenes>
+</document>
